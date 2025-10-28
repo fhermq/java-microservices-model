@@ -26,7 +26,7 @@ import com.pixan.customer.repository.CustomerRepository;
  */
 
 @RestController
-@RequestMapping("/customers")
+@RequestMapping("/customer")
 public class CustomerRestController {
 	
 	@Autowired

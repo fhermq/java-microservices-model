@@ -16,6 +16,7 @@
   <modules>
   	<module>customers</module>
   	<module>billing</module>
+  	<module>product</module>
   </modules>
   
    <properties>
