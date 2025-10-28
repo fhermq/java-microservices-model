@@ -1,0 +1,51 @@
+# Maven
+/target/
+bin/
+*.class
+*.jar
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+buildNumber.properties
+.mvn/wrapper/maven-wrapper.jar
+
+# Spring Boot
+*.log
+logs/
+tmp/
+.apt_generated/
+.classpath
+.factorypath
+.project
+.settings/
+.springBeans
+.sts4-cache/
+
+# Eclipse/STS specific files
+.project
+.classpath
+.settings/
+target/
+
+# Operating System Files
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Package Files
+*.jar
+*.war
+*.ear
+*.zip
+*.tar.gz
+
+# Environment Variables
+.env
+.env.*
+
+# Sensitive configuration files (adjust as needed)
+application-local.properties
+secrets.properties
