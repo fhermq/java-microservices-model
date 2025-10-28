@@ -41,7 +41,7 @@ public class ProductRestController {
 	}
 
 	@GetMapping("/{id}")
-	public ResponseEntity<?> get(@PathVariable long id) {
+	public ResponseEntity<?> get(@PathVariable Long id) {
 		Optional<Product> optional = productRepository.findById(id);
 		if (optional.isPresent()) {
 			return new ResponseEntity<Product>(optional.get(), HttpStatus.OK);
@@ -52,16 +52,16 @@ public class ProductRestController {
 	
 	
 	@PutMapping("/{id}")
-	public ResponseEntity<?> put(@PathVariable long id, @RequestBody Product product) {
+	public ResponseEntity<?> put(@PathVariable long id, @RequestBody Product input) {
 		Optional<Product> optional = productRepository.findById(id);
 		if (optional.isPresent()) {
 			Product existProduct = optional.get();
-			existProduct.setCategory(product.getCategory());
-			existProduct.setCode(product.getCode());
-			existProduct.setCurrency(product.getCurrency());
-			existProduct.setName(product.getName());
-			existProduct.setPrice(product.getPrice());
-			existProduct.setStockQuantity(product.getStockQuantity());
+			existProduct.setCategory(input.getCategory());
+			existProduct.setCode(input.getCode());
+			existProduct.setCurrency(input.getCurrency());
+			existProduct.setName(input.getName());
+			existProduct.setPrice(input.getPrice());
+			existProduct.setStockQuantity(input.getStockQuantity());
 			Product saveProduct = productRepository.save(existProduct);
 			return new ResponseEntity<Product>(saveProduct, HttpStatus.OK);
 			

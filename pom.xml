@@ -117,7 +117,15 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>     
-                <version>${spring-boot.version}</version>      
+                <version>${spring-boot.version}</version>     
+                <configuration>
+					<excludes>
+						<exclude>
+							<groupId>org.projectlombok</groupId>
+							<artifactId>lombok</artifactId>
+						</exclude>
+					</excludes>
+				</configuration> 
                 <executions>
                     <execution>
                         <goals>
@@ -125,7 +133,22 @@
                         </goals>
                     </execution>
                 </executions>
-            </plugin>        
+            </plugin>       
+            <plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				 <version>3.8.1</version>
+				<configuration>
+				        <parameters>true</parameters>
+					<annotationProcessorPaths>
+						<path>
+							<groupId>org.projectlombok</groupId>
+							<artifactId>lombok</artifactId>
+							<version>${org.lombo.version}</version>
+						</path>
+					</annotationProcessorPaths>
+				</configuration>
+			</plugin> 
             <!--   <plugin>
                 <groupId>com.spotify</groupId>
                 <artifactId>dockerfile-maven-plugin</artifactId>
@@ -201,6 +224,10 @@
                     </execution>
                 </executions>
             </plugin>-->
+            
+            
+            
+            
         </plugins>
     </build>
 

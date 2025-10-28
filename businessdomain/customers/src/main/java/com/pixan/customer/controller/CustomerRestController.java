@@ -55,12 +55,12 @@ public class CustomerRestController {
 	}
 	
 	@PutMapping("/{id}")
-	public ResponseEntity<?> put(@PathVariable long id, @RequestBody Customer customer) {
+	public ResponseEntity<?> put(@PathVariable long id, @RequestBody Customer input) {
 		Optional<Customer> optional = customerRepository.findById(id);
 		if (optional.isPresent()) {
 			Customer existCustomer = optional.get();
-			existCustomer.setName(customer.getName());
-			existCustomer.setPhone(customer.getPhone());
+			existCustomer.setNames(input.getNames());
+			existCustomer.setPhone(input.getPhone());
 			Customer saveCustomer = customerRepository.save(existCustomer);
 			return new ResponseEntity<Customer>(saveCustomer, HttpStatus.OK);
 		}else {
