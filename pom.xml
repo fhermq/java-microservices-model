@@ -33,7 +33,7 @@
         surefire:test is bound to test phase
         install:install is bound to install phase
         jar:jar and war:war is bound to package phase
-        
+         
      PLUGIN:
            It a goroup of goals that are't  nesscesary bound to the same phase. 
            in example see dockerfile-maven-plugin as below responsible for make a docker image and push them.  
